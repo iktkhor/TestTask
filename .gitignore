@@ -1,0 +1,5 @@
+xml_files/
+build/
+
+*.doc*
+*.exe
