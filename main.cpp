@@ -11,6 +11,7 @@
 using namespace std;
 using namespace tinyxml2;
 
+// Структура для удобного хранения размеров входных данных
 typedef struct StructLengths {
     StructLengths() = default;
     StructLengths(uint8_t path_len, uint8_t numCat_len, uint8_t weightCat_len, uint8_t index_len)
@@ -34,6 +35,7 @@ int main() {
 
 
 bool convert_to_xml(string filename, t_lengths lens) {
+    // К названию входного файла добавляется расширение xml формата
     std::string extention = ".xml";
     std::string new_filename = XMLF_DIR + filename + extention;
     short temp;
@@ -41,8 +43,6 @@ bool convert_to_xml(string filename, t_lengths lens) {
     ifstream fin;
     fin.open(BINF_DIR + filename, ios::binary);    
 
-
-    // !!!! DODELAT !!!!
     XMLDocument doc;
     XMLDeclaration *declaration = doc.NewDeclaration();
     doc.InsertFirstChild(declaration);
